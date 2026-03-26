@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: rgba(95, 158, 160,0.6);
+            padding: 30px 0px;
+        }
+         .header{
+            font-family: cursive;
+            color: blanchedalmond;
+            text-align: center;
+        
+        }
+        td,th{
+            padding: 10px;
+        }
+        table{
+            border:2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">View Student</h1>
+    <table cellpadding="0" cellspacing="0" border="1" align="center">
+        <tr>
+            <th>Roll No</th>
+            <th>Student name</th>
+            <th>subject 1</th>
+            <th>subject 2</th>
+            <th>subject 3</th>
+            <th>subject 4</th>
+            <th>subject 5</th>
+            <th>Total Marks</th>
+            <th>Persantage</th>
+            <th>Minimum</th>
+            <th>Maximum</th>
+            <th>Result</th>
+        </tr>
+    
+        <%result.forEach(function(data){%>
+            <tr>
+                <td><%= data.student_id %></td>
+                <td><%= data.name %></td>
+                <td><%= data.sub1 %></td>
+                <td><%= data.sub2 %></td>
+                <td><%= data.sub3 %></td>
+                <td><%= data.sub4 %></td>
+                <td><%= data.sub5 %></td>
+                <td><%= data.total %></td>
+                <td><%= data.persantage %></td>
+                <td><%= data.minimum %></td>
+                <td><%= data.maximum %></td>
+                <td><%= data.result %></td>
+            </tr>
+          <%});%>  
+          <tr>
+            <td colspan="14" align="center">
+                <a href="/staff" style="display: block;">Return Page</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

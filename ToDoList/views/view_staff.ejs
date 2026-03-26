@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(95, 158, 160,0.6);
+            padding: 30px 0px;
+        }
+         .header{
+            font-family: cursive;
+            color: blanchedalmond;
+            text-align: center;
+        
+        }
+        td,th{
+            padding: 10px;
+        }
+        table{
+            border:2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Staff Member</h1>
+    <table  cellpadding="0" cellspacing="0" border="1" align="center">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Delete Action</th>
+            <th>Edit Action</th>
+        </tr>
+    
+        <%result.forEach(function(data){%>
+            <tr>
+                <td><%= data.id %></td>
+                <td><%= data.name %></td>
+                <td><%= data.email %></td>
+                <td><%= data.password %></td>
+                <td><a href="/staff_delete/<%= data.id %>">Delete</a></td>
+                <td><a href="/staff_update/<%= data.id %>">Edit</a></td>
+    
+            </tr>
+          <%});%>  
+          <tr>
+            <td colspan="6" align="center">
+                <a href="/admin" style="display: block;">Return Page</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

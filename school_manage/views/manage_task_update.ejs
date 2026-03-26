@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        background-color: rgba(95, 158, 160,0.6);
+        padding: 100px 0px;
+    }
+     .header{
+        font-family: cursive;
+        color: blanchedalmond;
+        text-align: center;
+    
+    }
+    td{
+        padding: 10px;
+    }
+    table{
+        border:2px solid white;
+    }
+    input{
+        padding: 5px 10px;
+    }
+    input:focus-visible {
+        outline: none;
+    }
+</style>
+</head>
+<body>
+    <form action="/assignother_task/<%= userData.id %>" method="post">
+        <h1 class="header">update User Task</h1>
+        <table align="center">
+            <tr>
+                <td>Select Staff:=</td>
+                <td>
+                    <select name="staff" required>
+                        <% staffList.forEach(function(staff) { %>
+                            <option value="<%= staff.id %>" <% if (userData.staff_id == staff.id) { %> selected <% } %> ><%= staff.name %></option>
+                        <% }); %>
+                    </select>
+                </td>
+            </tr> 
+            <tr>
+                <td>Standard:=</td>
+                <td><input type="text" name="std" value="<%= userData.std_id %>" required></td>
+            </tr>
+            <tr>
+                <td>Divison:=</td>
+                <td><input type="text" name="div" value="<%= userData.divison %>" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Update Staff"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="/admin" style="display: block;">Return Page</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    
+</body>
+</html>

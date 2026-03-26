@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+          font-family: cursive;
+          color: blanchedalmond;
+          text-align: center;
+      
+      }
+      body{
+          background-color: rgba(95, 158, 160,0.6);
+          padding: 100px 0px;
+      }
+      .flex{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        justify-content:center;
+      }
+      a{
+          padding: 10px 20px;
+      }
+      button{
+          padding: 10px 20px;
+      }
+  </style>
+</head>
+<body>
+    <h1 class="header">School</h1>
+    <div class="flex">
+        <a href="/add_staff"><button>Add Staff</button></a>
+        <a href="/view_staff"><button>View Staff</button></a>
+        <a href="/add_standard"><button>Add Standard</button></a>
+        <a href="/add_divison"><button>Add Divison</button></a>
+        <a href="/add_student"><button>Add Student</button></a>
+        <a href="/view_student"><button>View Student</button></a>
+        <a href="/manage_staff"><button>Manage Staff</button></a>
+        <a href="/viewStdDiv_student"><button>View Student by Std/Div</button></a>
+        <a href="/view_resultAll"><button>All Result</button></a>
+        <a href="/view_resultStdDiv"><button>Result Student/Division</button></a>
+        <a href="/view_rank"><button>View Rank standardWise</button></a>
+        <a href="/logout"><button>LOG OUT</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(95, 158, 160,0.6);
+            padding: 100px 0px;
+        }
+         .header{
+            font-family: cursive;
+            color: blanchedalmond;
+            text-align: center;
+        
+        }
+        td{
+            padding: 10px;
+        }
+        table{
+            border:2px solid white;
+        }
+        input{
+            padding: 5px 10px;
+        }
+        input:focus-visible {
+            outline: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <h1 class="header">Add Result</h1>
+        <table align="center">
+            <tr>
+                <td>Subject1:</td>
+                <td><input type="number" name="sub1" required></td>
+            </tr>
+            <tr>
+                <td>Subject2:</td>
+                <td><input type="number" name="sub2" required></td>
+            </tr>
+            <tr>
+                <td>Subject3:</td>
+                <td><input type="number" name="sub3" required></td>
+            </tr>
+            <tr>
+                <td>Subject4:</td>
+                <td><input type="number" name="sub4" required></td>
+            </tr>
+            <tr>
+                <td>Subject5:</td>
+                <td><input type="number" name="sub5" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Add Result"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="/viewStaff_student" style="display: block;">Return Page</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

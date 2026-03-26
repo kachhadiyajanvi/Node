@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: rgba(95, 158, 160,0.6);
+            padding: 30px 0px;
+        }
+         .header{
+            font-family: cursive;
+            color: blanchedalmond;
+            text-align: center;
+        
+        }
+        td,th{
+            padding: 10px;
+        }
+        table{
+            border:2px solid white;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Show Student Result</h1>
+    <table cellpadding="0" cellspacing="0" border="1" align="center">
+    
+        <%result.forEach(function(data){%>
+            <tr>
+                <th>Roll No:=</th>
+                <td><%= data.student_id %></td>
+            </tr>
+            <tr>
+                <th>Name:=</th>
+                <td><%= data.name %></td>
+            </tr>
+            <tr>
+                <th>Subject 1:=</th>
+                <td><%= data.sub1 %></td>
+            </tr>
+            <tr>
+                <th>Subject 2:=</th>
+                <td><%= data.sub2 %></td>
+            </tr>
+            <tr>
+                <th>Subject 3:=</th>
+                <td><%= data.sub3 %></td>
+            </tr>
+            <tr>
+                <th>Subject 4:=</th>
+                <td><%= data.sub4 %></td>
+            </tr>
+            <tr>
+                <th>Subject 5:=</th>
+                <td><%= data.sub5 %></td>
+            </tr>
+            <tr>
+                <th>Total Marks:=</th>
+                <td><%= data.total %></td>
+            </tr> 
+            <tr>
+                <th>Persantage:=</th>
+                <td><%= data.persantage %></td>
+            </tr> 
+            <tr>
+                <th>Minimum:=</th>
+                <td><%= data.minimum %></td>
+            </tr> 
+            <tr>
+                <th>Maximum:=</th>
+                <td><%= data.maximum %></td>
+            </tr> 
+            <tr>
+                <th>Result:=</th>
+                <td><%= data.result %></td>
+            </tr> 
+          <%});%>  
+          <tr>
+            <td colspan="2" align="center">
+                <a href="/view_resultStudent" style="display: block;">Return Page</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

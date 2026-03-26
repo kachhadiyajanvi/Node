@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(95, 158, 160,0.6);
+            padding: 100px 0px;
+        }
+         .header{
+            font-family: cursive;
+            color: blanchedalmond;
+            text-align: center;
+        
+        }
+        td{
+            padding: 10px;
+        }
+        table{
+            border:2px solid white;
+        }
+        input{
+            padding: 5px 10px;
+        }
+        input:focus-visible {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/staff_update/<%= userData.id %>" method="post">
+        <h1 class="header">Staff Update</h1>
+        <table align="center">
+            <tr>
+                <td>Name:=</td>
+                <td><input type="text" name="name" value="<%= userData.name %>" required></td>
+            </tr>
+            <tr>
+                <td>Email:=</td>
+                <td><input type="email" name="email" value="<%= userData.email %>" required></td>
+            </tr>
+            <tr>
+                <td>Password:=</td>
+                <td><input type="password" name="password" value="<%= userData.password %>" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Update"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="/school" style="display: block;">Return Page</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+</body>
+</html>

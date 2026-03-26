@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: rgba(95, 158, 160,0.6);
+            padding: 50px 0px;
+        }
+         .header{
+            font-family: cursive;
+            color: blanchedalmond;
+            text-align: center;
+        
+        }
+        td{
+            padding: 10px;
+        }
+        table{
+            border:2px solid white;
+        }
+        input{
+            padding: 5px 10px;
+        }
+        input:focus-visible {
+            outline: none;
+        }
+        select{
+            padding:5px 10px ;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <h1 class="header">Add Divison</h1>
+        <table align="center">
+            <tr>
+                <td>Select Staff:=</td>
+                <td>
+                    <select name="staff" required>
+                        <option value="">select Staff</option>
+                        <%resultstaff.forEach(function(data){%>
+                        <option value="<%=data.id%>"><%=data.name%></option>
+                        <%});%>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Standard:=</td>
+                <td>
+                    <select name="std" required>
+                        <option value="">select Standard</option>
+                        <%result.forEach(function(data){%>
+                        <option value="<%=data.id%>"><%=data.std%></option>
+                        <%});%>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Divison</td>
+                <td><input type="text" name="divison" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Add Divison"></td>
+            </tr>
+            <tr>
+                <td colspan="6" align="center">
+                    <a href="/school" style="display: block;">Return Page</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

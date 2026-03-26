@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>image</th>
+    </tr>
+    <%result.forEach(function(data){%>
+        <tr>
+            <td><%=data.name%></td>
+            <td><%=data.email%></td>
+            <td><%=data.password%></td>
+            <td><img src="/images/<%= data.image %>" alt="<%= data.image %>" style="max-width: 100px; max-height: 100px;"></td>
+
+        </tr>
+    <%})%>
+</table>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Name:-</td>
+                <td><input type="text" name="name" ></td>
+            </tr>
+            <tr>
+                <td>Email:-</td>
+                <td><input type="email" name="email" ></td>
+            </tr>
+            <tr>
+                <td>Password:-</td>
+                <td><input type="password" name="password" ></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="save" ></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Delete Action</th>
+        <th>Edit Action</th>
+    </tr>
+
+    <%result.forEach(function(data){%>
+        <tr>
+            <td><%= data.id %></td>
+            <td><%= data.name %></td>
+            <td><%= data.email %></td>
+            <td><%= data.password %></td>
+            <td><a href="/delete/<%= data.id %>">Delete</a></td>
+            <td><a href="/update/<%= data.id %>">Edit</a></td>
+
+        </tr>
+      <%});%>  
+</table>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: rgba(95, 158, 160,0.6);
+            padding: 50px 0px;
+        }
+         .header{
+            font-family: cursive;
+            color: blanchedalmond;
+            text-align: center;
+        
+        }
+        td{
+            padding: 10px;
+        }
+        table{
+            border:2px solid white;
+        }
+        input{
+            padding: 5px 10px;
+        }
+        input:focus-visible {
+            outline: none;
+        }
+        select{
+            padding:5px 10px ;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <h1 class="header">Add Student</h1>
+        <table align="center">
+            <tr>
+                <td>Select Standard:=</td>
+                <td>
+                    <select name="std"  id="standardSelect" required>
+                        <option value="">select Standard</option>
+                        <%standards.forEach(function(data){%>
+                            <option value="<%=data.id%>"><%=data.std%></option>
+                        <%});%>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Divison:=</td>
+                <td>
+                    <select name="div" id="divisionSelect" required>
+                        <option value=''>Select Division</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Student Name:</td>
+                <td><input type="text" name="student_name" required></td>
+            </tr>
+            <tr>
+                <td>Student Email:</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Student Conatct:</td>
+                <td><input type="number" name="contact" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Add Student"></td>
+            </tr>
+            <tr>
+                <td colspan="6" align="center">
+                    <a href="/school" style="display: block;">Return Page</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var standardSelect = document.getElementById("standardSelect");
+            var divisionSelect = document.getElementById("divisionSelect");
+            
+            standardSelect.addEventListener("change", function() {
+                var selectedStandardId = standardSelect.value;
+                if (selectedStandardId) {
+                    fetch(`/divisions/${selectedStandardId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            divisionSelect.innerHTML = "<option value=''>Select Division</option>";
+                            data.forEach(division => {
+                                divisionSelect.innerHTML += `<option value="${division.id}">${division.divison}</option>`;
+                            });
+                        })
+                        .catch(error => console.error('Error fetching divisions:', error));
+                } else {
+                    divisionSelect.innerHTML = "<option value=''>Select Division</option>";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
